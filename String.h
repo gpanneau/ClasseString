@@ -12,6 +12,7 @@ class string{
     char* data();
     size_t size();
     size_t capacity();
+    bool empty();
     static size_t max_size();
     //Setters
     //Constructeur

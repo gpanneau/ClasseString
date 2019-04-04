@@ -6,7 +6,7 @@ char* string::data(){
 }
 
 size_t string::size(){
-  return next_;
+  return size_;
 }
 
 size_t capacity(){
@@ -15,6 +15,13 @@ size_t capacity(){
 
 static size_t max_size(){
 	return MAX_SIZE;
+}
+
+bool string::empty(){
+    if (size_ == 0){
+        return true;
+    }
+    return false;
 }
 
 /*string::string(){
