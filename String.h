@@ -14,7 +14,10 @@ class string{
     size_t capacity();
     static size_t max_size();
     //Setters
+    size();
+    clear();
     //Constructeur
+    
     /*string();
     string(.....);*/
 };
