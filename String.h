@@ -12,15 +12,14 @@ class string{
     char* data();
     size_t size();
     size_t capacity();
-    static size_t max_size();
+    bool empty();
     //Setters
     size();
     clear();
     //Constructeur
-    
-    /*string();
-    string(.....);*/
+    string(); //default constructor
+    string(.....);
 };
 
-#endif //NODE_ 
+#endif //STRING_ 
 

@@ -14,8 +14,12 @@ size_t capacity(){
 	return capacity_;
 }
 
-static size_t max_size(){
-	return MAX_SIZE;
+string::string(){
+	new char null_character="\0";
+	data_=*null_character;
+	size_=0;
+	capacity_=size_+1;
+	MAX_SIZE=100;
 }
 
 /*char* string::copie(const string& str){
@@ -39,11 +43,19 @@ void string::clear(){
   size_=0;
 }
   
-/*string::string(){
+string::string(){
+
+bool string::empty(){
+    if (size_ == 0){
+        return true;
+    }
+    return false;
 }
 
-string::string(.....){
+
+string::string(){
   this->=;
   this->=;
   ....
-}*/
+}
+
