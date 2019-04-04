@@ -13,12 +13,11 @@ class string{
     size_t size();
     size_t capacity();
     bool empty();
-    static size_t max_size();
     //Setters
     //Constructeur
-    /*string();
-    string(.....);*/
+    string(); //default constructor
+    string(.....);
 };
 
-#endif //NODE_ 
+#endif //STRING_ 
 
