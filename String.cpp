@@ -1,27 +1,29 @@
 #include <cassert>
 #include <iostream>
+#include "String.h"
 
 char* string::data(){
   return data_;
 }
 
 size_t string::size(){
-  return next_;
+  return size_;
 }
 
 size_t capacity(){
 	return capacity_;
 }
 
-static size_t max_size(){
-	return MAX_SIZE;
+string::string(){
+	new char null_character="\0";
+	data_=*null_character;
+	size_=0;
+	capacity_=size_+1;
+	MAX_SIZE=100;
 }
 
-/*string::string(){
-}
-
-string::string(.....){
+string::string(){
   this->=;
   this->=;
   ....
-}*/
+}
