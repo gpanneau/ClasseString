@@ -9,17 +9,15 @@ class string{
     static size_t MAX_SIZE;
   public:
     //Getters
-    char* data();
     size_t size();
+    size_t length();
     size_t capacity();
     bool empty();
     //Setters
-    size();
-    clear();
+    void clear();
     //Constructeur
-    string(); //default constructor
-    string(.....);
+    /*string(); //default constructor*/
+    string(const char* s);
 };
 
-#endif //STRING_ 
-
+#endif //STRING_
