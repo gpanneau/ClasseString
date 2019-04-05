@@ -30,13 +30,13 @@ string::string(){
   return copy;
 }*/
   
-int string::size(){
+/*int string::size(){
   int i=0;
   while (*(data_+i)=!"/0"){
     ++i;
   }
   return i;
-}
+}*/
 
 void string::clear(){
   *data_="/0";
@@ -46,10 +46,10 @@ void string::clear(){
 string::string(){
 
 bool string::empty(){
-    if (size_ == 0){
-        return true;
-    }
-    return false;
+  if (size_ == 0){
+      return true;
+  }
+  return false;
 }
 
 
