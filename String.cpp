@@ -4,16 +4,19 @@
 
 size_t string::MAX_SIZE=100;
 
-size_t string::size(){
+size_t string::size() const{
   return size_;
 }
 
-size_t string::length(){
+size_t string::length() const{
   return size_;
 }
 
-size_t string::capacity(){
+size_t string::capacity() const{
   return capacity_;
+}
+
+const char* c_str() const{
 }
 
 string::string(const char* s){
@@ -39,7 +42,7 @@ void string::clear(){
   size_=0;
 }
 
-bool string::empty(){
+bool string::empty() const{
     if (size_ == 0){
         return true;
     }
