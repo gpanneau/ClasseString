@@ -7,6 +7,7 @@ class string{
     size_t size_;
     size_t capacity_;
     static size_t MAX_SIZE;
+
   public:
     //Getters
     size_t size();

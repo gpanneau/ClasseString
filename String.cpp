@@ -13,7 +13,7 @@ size_t string::length(){
 }
 
 size_t string::capacity(){
-	return capacity_;
+  return capacity_;
 }
 
 /*DEFAULT CONSTRUCTOR
@@ -27,12 +27,13 @@ string::string(){
 }*/
 
 string::string(const char* s){
-  *data_=*s;
   size_=0;
-  while (*(data_+size_)!='\0'){
+  while (*(s+size_)!='\0'){
     ++size_;
   }
-  capacity_=size_+1;
+  capacity_=size_;
+  data_=new char[size_];
+  *data_=*s;
 }
 
 /*char* string::copie(const string& str){
