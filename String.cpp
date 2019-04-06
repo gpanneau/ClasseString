@@ -16,16 +16,6 @@ size_t string::capacity(){
   return capacity_;
 }
 
-/*DEFAULT CONSTRUCTOR
-
-string::string(){
-	new char null_character="\0";
-	data_=&null_character;
-	size_=0;
-	capacity_=size_+1;
-	MAX_SIZE=100;
-}*/
-
 string::string(const char* s){
   size_=0;
   while (*(s+size_)!='\0'){
