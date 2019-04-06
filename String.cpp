@@ -16,7 +16,8 @@ size_t string::capacity() const{
   return capacity_;
 }
 
-const char* c_str() const{
+const char* string::c_str() const{
+  return data_;
 }
 
 string::string(const char* s){
@@ -37,7 +38,7 @@ string::string(const char* s){
   return copy;
 }*/
 
-void string::clear(){
+/*void string::clear(){
   *data_='\0';
   size_=0;
 }
@@ -47,4 +48,4 @@ bool string::empty() const{
         return true;
     }
     return false;
-}
+}*/
