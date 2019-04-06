@@ -16,8 +16,7 @@ class string{
     bool empty();
     //Setters
     void clear();
-    //Constructeur
-    /*string(); //default constructor*/
+    //Constructors
     string(const char* s);
 };
 
