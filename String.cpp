@@ -27,7 +27,8 @@ string::string(const char* s){
   }
   capacity_=size_;
   data_=new char[size_];
-  *data_=*s;
+  for (int i=0; i<size_;++i){
+    data_[i]=s[i];}
 }
 
 /*char* string::copie(const string& str){
