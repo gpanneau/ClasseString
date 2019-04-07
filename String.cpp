@@ -22,7 +22,7 @@ const char* string::c_str() const{
 
 string::string(const char* s){
   size_=0;
-  while (*(s+size_)!='\0'){
+  while (s[size_]!='\0'){
     ++size_;
   }
   capacity_=size_;
