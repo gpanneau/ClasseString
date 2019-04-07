@@ -10,10 +10,11 @@ class string{
 
   public:
     //Getters
+    const char* c_str() const;
     size_t size() const;
     size_t length() const;
     size_t capacity() const;
-    const char* c_str() const;
+    size_t max_size() const;
     bool empty() const;
     //Setters
     void clear();

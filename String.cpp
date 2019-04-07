@@ -16,6 +16,10 @@ size_t string::capacity() const{
   return capacity_;
 }
 
+size_t string::max_size() const{
+  return MAX_SIZE;
+}
+
 const char* string::c_str() const{
   return data_;
 }
