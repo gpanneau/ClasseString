@@ -35,8 +35,9 @@ string::string(const char* s){
     data_[i]=s[i];
   }
   data_[size_]='\0';
-  
-  
+
+}
+
 string::string(const string& str){
   if (str.size()<MAX_SIZE){
     size_=str.size();
@@ -48,7 +49,7 @@ string::string(const string& str){
   }
   int i=0;
   while (i<size_){
-    data_[size_+i]=str[i];
+    data_[i]=str.c_str()[i];
     ++i;
   }
 
@@ -58,6 +59,10 @@ string::string(const string& str){
 
 string::~string(){
   delete [] data_;
+
+void string::clear(){
+  size_=0;
+  *data_='\0';
 }
 
 void string::resize (size_t n, char c){
