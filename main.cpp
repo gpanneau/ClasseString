@@ -19,6 +19,15 @@ int main(int argc, char* argv[]){
 'p','q','s','d','f','g','h','j','k','l','m','w','x','c','v','b','n'};
   string str3(table3);
   std::cout << str3.c_str() << std::endl << str3.size() << std::endl <<str3.capacity() << std::endl << str3.max_size() << std::endl;
+  std::cout<<""<<std::endl;
+  std::cout<<""<<std::endl;
+  
+  char table4[]="fonction clear"; 
+  string str4(table4);
+  std::cout<<str4.c_str()<<std::endl;
+  str4.clear();
+  std::cout<<str4.c_str()<<std::endl;
+  std::cout<<str4.size()<<std::endl;
   return 0;
 }
   
