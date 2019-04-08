@@ -37,7 +37,7 @@ string::string(const char* s){
   data_[size_]='\0';
   
   
-string::copy(const string& str){
+string::string(const string& str){
   if (str.size()<MAX_SIZE){
     size_=str.size();
     data_=new char[size_+1];
