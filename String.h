@@ -21,7 +21,7 @@ class string{
     void resize (size_t n, char c);
     //Constructors
     string(const char* s);
-    copy(const string& str);
+    string(const string& str);
 };
 
 #endif //STRING_
