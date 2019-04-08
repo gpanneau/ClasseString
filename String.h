@@ -18,6 +18,7 @@ class string{
     bool empty() const;
     //Setters
     void clear();
+    void resize (size_t n, char c);
     //Constructors
     string(const char* s);
 };

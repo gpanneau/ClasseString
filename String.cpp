@@ -26,13 +26,32 @@ const char* string::c_str() const{
 
 string::string(const char* s){
   size_=0;
-  while (s[size_]!='\0'){
+  while (s[size_]!='\0' and size_<MAX_SIZE){
     ++size_;
   }
   capacity_=size_;
   data_=new char[size_];
   for (int i=0; i<size_;++i){
-    data_[i]=s[i];}
+    data_[i]=s[i];
+  }
+  data_[size_]='\0';
+  
+}
+
+void string::resize (size_t n, char c){
+  if (n<size_){
+    size_=n;
+    data_[size_]='\0';
+    }
+  if (n>size_){
+    int i=0;
+    while (i<n and i<MAX_SIZE){
+      data_[size_+i]=c;
+      ++i;
+    }
+    size_=n;
+    data_[size_]='\0';
+  }
 }
 
 /*char* string::copie(const string& str){
