@@ -2,60 +2,90 @@
 #include <iostream>
 #include "String.h"
 
-char* string::data(){
-  return data_;
-}
+size_t string::MAX_SIZE=100;
 
-size_t string::size(){
+size_t string::size() const{
   return size_;
 }
 
-size_t capacity(){
-	return capacity_;
+size_t string::length() const{
+  return size_;
 }
 
-string::string(){
-	new char null_character="\0";
-	data_=*null_character;
-	size_=0;
-	capacity_=size_+1;
-	MAX_SIZE=100;
+size_t string::capacity() const{
+  return capacity_;
 }
 
-/*char* string::copie(const string& str){
-  int *copy=new char[];
-	for (int i=0;i<taille;i++){
-		copy[i]=*(str+i);
-	}
-  return copy;
-}*/
+size_t string::max_size() const{
+  return MAX_SIZE;
+}
+
+const char* string::c_str() const{
+  return data_;
+}
+
+string::string(const char* s){
+  size_=0;
+  while (s[size_]!='\0' and size_<MAX_SIZE){
+    ++size_;
+  }
+  capacity_=size_;
+  data_=new char[size_+1];
+  for (int i=0; i<size_;++i){
+    data_[i]=s[i];
+  }
+  data_[size_]='\0';
   
-/*int string::size(){
+  
+string::copy(const string& str){
+  if (str.size()<MAX_SIZE){
+    size_=str.size();
+    data_=new char[size_+1];
+  }
+  else {
+    size_=MAX_SIZE;
+    data_=new char[MAX_SIZE+1];
+  }
   int i=0;
-  while (*(data_+i)=!"/0"){
+  while (i<size_){
+    data_[size_+i]=str[i];
     ++i;
   }
-  return i;
-}*/
 
-void string::clear(){
-  *data_="/0";
+  data_[size_]='\0';
+  capacity_=size_;
+}
+
+string::~string(){
+  delete [] data_;
+}
+
+void string::resize (size_t n, char c){
+  if (n<size_){
+    size_=n;
+    data_[size_]='\0';
+    }
+  if (n>size_){
+    int i=0;
+    while (i<n and i<MAX_SIZE){
+      data_[size_+i]=c;
+      ++i;
+    }
+    size_=n;
+    data_[size_]='\0';
+  }
+}
+
+
+
+/*void string::clear(){
+  *data_='\0';
   size_=0;
 }
-  
-string::string(){
 
-bool string::empty(){
+bool string::empty() const{
   if (size_ == 0){
       return true;
   }
   return false;
-}
-
-
-string::string(){
-  this->=;
-  this->=;
-  ....
-}
-
+}*/

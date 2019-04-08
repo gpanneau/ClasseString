@@ -7,19 +7,23 @@ class string{
     size_t size_;
     size_t capacity_;
     static size_t MAX_SIZE;
+
   public:
     //Getters
-    char* data();
-    size_t size();
-    size_t capacity();
-    bool empty();
+    const char* c_str() const;
+    size_t size() const;
+    size_t length() const;
+    size_t capacity() const;
+    size_t max_size() const;
+    bool empty() const;
     //Setters
-    size();
-    clear();
-    //Constructeur
-    string(); //default constructor
-    string(.....);
+    void clear();
+    void resize (size_t n, char c);
+    //Constructors
+    string(const char* s);
+    copy(const string& str);
+    //Destructor
+    ~string();
 };
 
-#endif //STRING_ 
-
+#endif //STRING_
