@@ -30,12 +30,30 @@ string::string(const char* s){
     ++size_;
   }
   capacity_=size_;
-  data_=new char[size_];
+  data_=new char[size_+1];
   for (int i=0; i<size_;++i){
     data_[i]=s[i];
   }
   data_[size_]='\0';
   
+}
+
+string::copy(const string& str){
+  if (str.size()<MAX_SIZE){
+    size_=str.size();
+    data_=new char[size_+1];
+  }
+  else {
+    size_=MAX_SIZE;
+    data_=new char[MAX_SIZE+1];
+  }
+  int i=0;
+  while (i<size_){
+    data_[size_+i]=str[i];
+    ++i;
+  }
+  data_[size_]='\0';
+  capacity_=size_;
 }
 
 void string::resize (size_t n, char c){
@@ -54,13 +72,7 @@ void string::resize (size_t n, char c){
   }
 }
 
-/*char* string::copie(const string& str){
-  int *copy=new char[];
-	for (int i=0;i<taille;i++){
-		copy[i]=*(str+i);
-	}
-  return copy;
-}*/
+
 
 /*void string::clear(){
   *data_='\0';
