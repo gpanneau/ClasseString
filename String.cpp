@@ -59,6 +59,7 @@ string::string(const string& str){
 
 string::~string(){
   delete [] data_;
+}
 
 void string::clear(){
   size_=0;
