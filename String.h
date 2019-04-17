@@ -20,10 +20,13 @@ class string{
     void clear();
     void resize (size_t n, char c);
     //Constructors
+    string();
     string(const char* s);
     string(const string& str);
     //Destructor
     ~string();
+    //Operators
+    string &operator=(char);
 };
 
 #endif //STRING_

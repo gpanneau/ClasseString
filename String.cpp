@@ -24,6 +24,12 @@ const char* string::c_str() const{
   return data_;
 }
 
+string::string(){
+  size_=0;
+  data_=new char[size_+1];
+  data_[0]='\0';
+}
+
 
 string::string(const char* s){
   size_=0;
@@ -61,6 +67,7 @@ string::string(const string& str){
 
 string::~string(){
   delete [] data_;
+}
 
 void string::clear(){
   size_=0;
@@ -92,13 +99,35 @@ void string::resize (size_t n, char c){
  
 }
 
-
-
-/*void string::clear(){
-  *data_='\0';
-  size_=0;
+string &string::operator=(char c){
+  data_=new char[MAX_SIZE+1];
+  data_[0]=c;
+  data_[1]='\0';
+  size_=1;
+  capacity_=1;
 }
 
+/*
+string operator+(const char* lhs, const string& rhs){
+  int i=0;
+  while  (lhs[i]!='\0' && size_+i<=MAX_SIZE){
+    rhs[size_+i]=lhs[i];
+  }
+  return rhs;
+}
+
+string operator+(const string& lhs, const char* rhs){
+  int i=0;
+  while  (rhs[i]!='\0' && size_+i<=MAX_SIZE){
+    lhs[size_+i]=rhs[i];
+  }
+  return rhs;
+}
+
+*/
+
+
+/*
 bool string::empty() const{
   if (size_ == 0){
       return true;
