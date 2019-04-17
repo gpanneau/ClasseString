@@ -36,6 +36,7 @@ string::string(const char* s){
     data_[i]=s[i];
   }
   data_[size_]='\0';
+
 }
 
 
@@ -53,9 +54,13 @@ string::string(const string& str){
     data_[i]=str.c_str()[i];
     ++i;
   }
+
   data_[size_]='\0';
   capacity_=size_;
 }
+
+string::~string(){
+  delete [] data_;
 
 void string::clear(){
   size_=0;
@@ -95,8 +100,8 @@ void string::resize (size_t n, char c){
 }
 
 bool string::empty() const{
-    if (size_ == 0){
-        return true;
-    }
-    return false;
+  if (size_ == 0){
+      return true;
+  }
+  return false;
 }*/

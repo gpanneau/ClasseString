@@ -22,6 +22,8 @@ class string{
     //Constructors
     string(const char* s);
     string(const string& str);
+    //Destructor
+    ~string();
 };
 
 #endif //STRING_
