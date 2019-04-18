@@ -27,6 +27,7 @@ class string{
     ~string();
     //Operators
     string &operator=(char);
+    string &operator=(const string);
 };
 
 #endif //STRING_

@@ -15,6 +15,7 @@ int main(int argc, char* argv[]){
 'p','q','s','d','f','g','h','j','k','l','m','w','x','c','v','b','n'};  // limit case : size>MAX_SIZE
   char table4[]="fonction clear";
 
+
   string str1(table1);
   std::cout<<"current case :"<<std::endl;
   std::cout << "c_str reading test : " << str1.c_str() << std::endl 
@@ -57,6 +58,19 @@ int main(int argc, char* argv[]){
   <<"size test : "<<std::boolalpha<< (str5.size()==1) << std::endl 
   <<"capacity test : "<<std::boolalpha<<(str5.capacity()==1) << std::endl 
   <<"MAX_SIZE test : "<<std::boolalpha<< (str5.max_size()==100) << std::endl;
+  
+  std::cout<<std::endl;
+  
+  string str6;
+  str6=str1;
+  std::cout<<"operator=(string) :"<<std::endl;
+  std::cout << "c_str reading test : " << str6.c_str() << std::endl 
+  <<"size test : "<<std::boolalpha<< (str6.size()==5) << std::endl 
+  <<"capacity test : "<<std::boolalpha<<(str6.capacity()==5) << std::endl 
+  <<"MAX_SIZE test : "<<std::boolalpha<< (str6.max_size()==100) << std::endl;
+  
+  std::cout<<std::endl;
+  
   
   return 0;
 }

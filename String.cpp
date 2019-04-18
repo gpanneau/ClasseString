@@ -108,13 +108,12 @@ string &string::operator=(char c){
 }
 
 /*
-string operator+(const char* lhs, const string& rhs){
-  int i=0;
-  while  (lhs[i]!='\0' && size_+i<=MAX_SIZE){
-    rhs[size_+i]=lhs[i];
-  }
+string string::operator+(const char* lhs, const string& rhs){
+  data_=new char[MAX_SIZE+1]
+  rhs[size_+i]=lhs[i];
   return rhs;
 }
+
 
 string operator+(const string& lhs, const char* rhs){
   int i=0;
@@ -125,6 +124,18 @@ string operator+(const string& lhs, const char* rhs){
 }
 
 */
+
+string &string::operator=(const string str){
+  data_=new char[MAX_SIZE+1];
+  int i=0;
+  while (str.c_str()[i]!='\0'){
+    data_[i]=str.c_str()[i];
+    ++i;
+  }
+  data_[i+1]='\0';
+  size_=str.size();
+  capacity_=str.capacity();
+}
 
 
 /*
