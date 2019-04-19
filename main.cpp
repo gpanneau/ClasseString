@@ -19,6 +19,10 @@ int main(int argc, char* argv[]){
 'p','q','s','d','f','g','h','j','k','l','m','w','x','c','v','b','n'};
   string str3(table3);
   std::cout << str3.c_str() << std::endl << str3.size() << std::endl <<str3.capacity() << std::endl << str3.max_size() << std::endl;
+  
+  std::cout << std::endl << std::endl;
+  std::cout << str1.c_str() << std::endl << str1.size() << std::endl <<str1.capacity() << std::endl << str1.max_size() << std::endl;
+  str1.reserve(25);
+  std::cout << str1.c_str() << std::endl << str1.size() << std::endl <<str1.capacity() << std::endl << str1.max_size() << std::endl;
   return 0;
 }
-  
