@@ -82,7 +82,25 @@ void string::resize (size_t n, char c){
   }
 }
 
-
+void string::reserve (size_t n){
+  if (n>MAX_SIZE){
+    throw std::length_error("Length should not exceed 100");
+  }
+  if (capacity_!=n){
+    if (size_>n){
+      n=size_;
+    }
+    char* temp=data_;
+    data_=new char[n+1];
+    int i=0;
+    while (i<size_){
+      data_[i]=temp[i];
+      ++i;
+    }
+    data_[size_]='\0';
+    capacity_=n;
+  }
+}
 
 /*void string::clear(){
   *data_='\0';

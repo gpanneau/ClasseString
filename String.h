@@ -19,6 +19,7 @@ class string{
     //Setters
     void clear();
     void resize (size_t n, char c);
+    void reserve (size_t n = 0);
     //Constructors
     string(const char* s);
     string(const string& str);
