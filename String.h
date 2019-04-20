@@ -30,4 +30,6 @@ class string{
     string &operator=(const string);
 };
 
+/*char* operator+(string str, char* c);*/
+
 #endif //STRING_

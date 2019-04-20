@@ -71,6 +71,18 @@ int main(int argc, char* argv[]){
   
   std::cout<<std::endl;
   
+  /*
+  string str7;
+  str7=str1;
+  char A[]=" world!";
+  char *a=A;
+  str7+a;
+  std::cout<<"operator+(char*) :"<<std::endl;
+  std::cout << "c_str reading test : " << str7.c_str() << std::endl 
+  <<"size test : "<<std::boolalpha<< (str6.size()==12) << std::endl 
+  <<"capacity test : "<<std::boolalpha<<(str6.capacity()==12) << std::endl 
+  <<"MAX_SIZE test : "<<std::boolalpha<< (str6.max_size()==100) << std::endl;
+  */
   
   return 0;
 }
