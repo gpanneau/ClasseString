@@ -102,6 +102,19 @@ void string::reserve (size_t n){
   }
 }
 
+string& string::operator= (const char* s){
+  size_=0;
+  while (s[size_]!='\0' and size_<MAX_SIZE){
+    ++size_;
+  }
+  capacity_=size_;
+  data_=new char[size_+1];
+  for (int i=0; i<size_;++i){
+    data_[i]=s[i];
+  }
+  data_[size_]='\0';
+  return *this;
+}
 /*void string::clear(){
   *data_='\0';
   size_=0;

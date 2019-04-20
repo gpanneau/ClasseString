@@ -23,6 +23,7 @@ class string{
     //Constructors
     string(const char* s);
     string(const string& str);
+    string& operator= (const char* s);
     //Destructor
     ~string();
 };
