@@ -74,16 +74,30 @@ int main(int argc, char* argv[]){
   /*
   string str7;
   str7=str1;
-  char A[]=" world!";
-  char *a=A;
-  str7+a;
+  char *a=" world!";
+  str8=str7+a;
   std::cout<<"operator+(char*) :"<<std::endl;
-  std::cout << "c_str reading test : " << str7.c_str() << std::endl 
-  <<"size test : "<<std::boolalpha<< (str6.size()==12) << std::endl 
-  <<"capacity test : "<<std::boolalpha<<(str6.capacity()==12) << std::endl 
-  <<"MAX_SIZE test : "<<std::boolalpha<< (str6.max_size()==100) << std::endl;
+  std::cout << "c_str reading test : " << str8.c_str() << std::endl 
+  <<"size test : "<<std::boolalpha<< (str8.size()==12) << std::endl 
+  <<"capacity test : "<<std::boolalpha<<(str8.capacity()==12) << std::endl 
+  <<"MAX_SIZE test : "<<std::boolalpha<< (str8.max_size()==100) << std::endl;
   */
   
+
+  std::cout << str3.c_str() << std::endl << str3.size() << std::endl <<str3.capacity() << std::endl << str3.max_size() << std::endl;
+  //reserve
+  std::cout << std::endl << std::endl;
+  std::cout << str1.c_str() << std::endl << str1.size() << std::endl <<str1.capacity() << std::endl << str1.max_size() << std::endl;
+  str1.reserve(25);
+  std::cout << str1.c_str() << std::endl << str1.size() << std::endl <<str1.capacity() << std::endl << str1.max_size() << std::endl;
+  //operator=(char*)
+  std::cout << std::endl << std::endl;
+  str2 = str1.c_str();
+  std::cout << str2.c_str() << std::endl << str2.size() << std::endl <<str2.capacity() << std::endl << str2.max_size() << std::endl;
+  //operator+(string)
+  std::cout << std::endl << (str1+str1).c_str() << std::endl;
+
+
+
   return 0;
 }
-  

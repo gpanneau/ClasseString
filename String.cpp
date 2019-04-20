@@ -122,6 +122,43 @@ string &string::operator=(const string str){
   capacity_=str.capacity();
 }
 
+
+
+void string::reserve (size_t n){
+  if (n>MAX_SIZE){
+    throw std::length_error("Length should not exceed 100");
+  }
+  if (capacity_!=n){
+    if (size_>n){
+      n=size_;
+    }
+    char* temp=data_;
+    data_=new char[n+1];
+    int i=0;
+    while (i<size_){
+      data_[i]=temp[i];
+      ++i;
+    }
+    data_[size_]='\0';
+    capacity_=n;
+  }
+}
+
+string& string::operator= (const char* s){
+  size_=0;
+  while (s[size_]!='\0' and size_<MAX_SIZE){
+    ++size_;
+  }
+  capacity_=size_;
+  data_=new char[size_+1];
+  for (int i=0; i<size_;++i){
+    data_[i]=s[i];
+  }
+  data_[size_]='\0';
+  return *this;
+}
+
+
 /*
 string string::operator+(char* c){
   int i=0;
@@ -133,8 +170,6 @@ string string::operator+(char* c){
   size_+=i;
   capacity_+=i;
   return *this;
-}
-
 
 string operator+(string str, char* c){
   string new_str;
