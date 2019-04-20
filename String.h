@@ -28,4 +28,20 @@ class string{
     ~string();
 };
 
+static string operator+ (const string& lhs, const string& rhs){
+  char* temp;
+  temp = new char[lhs.size()+rhs.size()];
+  int i=0;
+  while (lhs.c_str()[i]!='\0') {
+    temp[i]=lhs.c_str()[i];
+    ++i;
+  }
+  int j=0;
+  while (rhs.c_str()[j]!='\0') {
+    temp[i]=rhs.c_str()[j];
+    ++i; ++j;
+  }
+  temp[i]='\0';
+  return string(temp);
+}
 #endif //STRING_
