@@ -24,5 +24,9 @@ int main(int argc, char* argv[]){
   std::cout << str1.c_str() << std::endl << str1.size() << std::endl <<str1.capacity() << std::endl << str1.max_size() << std::endl;
   str1.reserve(25);
   std::cout << str1.c_str() << std::endl << str1.size() << std::endl <<str1.capacity() << std::endl << str1.max_size() << std::endl;
+  
+  std::cout << std::endl << std::endl;
+  str2 = str1.c_str();
+  std::cout << str2.c_str() << std::endl << str2.size() << std::endl <<str2.capacity() << std::endl << str2.max_size() << std::endl;
   return 0;
 }
