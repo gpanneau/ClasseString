@@ -71,17 +71,18 @@ int main(int argc, char* argv[]){
   
   std::cout<<std::endl;
   
-  /*
+  
   string str7;
   str7=str1;
-  char *a=" world!";
-  str8=str7+a;
+  char A[]=" world!";
+  char *a=A;
+  string str8=str7+a;
   std::cout<<"operator+(char*) :"<<std::endl;
   std::cout << "c_str reading test : " << str8.c_str() << std::endl 
   <<"size test : "<<std::boolalpha<< (str8.size()==12) << std::endl 
   <<"capacity test : "<<std::boolalpha<<(str8.capacity()==12) << std::endl 
   <<"MAX_SIZE test : "<<std::boolalpha<< (str8.max_size()==100) << std::endl;
-  */
+  
   
 
   std::cout << str3.c_str() << std::endl << str3.size() << std::endl <<str3.capacity() << std::endl << str3.max_size() << std::endl;

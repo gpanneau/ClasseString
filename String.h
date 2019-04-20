@@ -52,4 +52,25 @@ static string operator+ (const string& lhs, const string& rhs){
   return string(temp);
 }
 
+
+
+static string operator+(const string lhs, const char* rhs){
+  char *temp;
+  temp=new char[100+1];
+  int i=0;
+  while (lhs.c_str()[i]!='\0' && i!=100){
+    temp[i]=lhs.c_str()[i];
+    ++i;
+  }
+  int j=0;
+  while (rhs[j]!='\0' && i!=100){
+    temp[i]=rhs[j];
+    ++i;
+    ++j;
+  }
+  temp[i+1]='\0';
+  string str(temp);
+  return str;
+}
+
 #endif //STRING_
