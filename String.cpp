@@ -99,12 +99,20 @@ void string::resize (size_t n, char c){
  
 }
 
+bool string::empty() const{
+  if (size_ == 0){
+    return true;
+  }
+  return false;
+}
+
 string &string::operator=(char c){
   data_=new char[MAX_SIZE+1];
   data_[0]=c;
   data_[1]='\0';
   size_=1;
   capacity_=1;
+  return *this;
 }
 
 
@@ -120,6 +128,7 @@ string &string::operator=(const string str){
   data_[i+1]='\0';
   size_=str.size();
   capacity_=str.capacity();
+  return *this;
 }
 
 

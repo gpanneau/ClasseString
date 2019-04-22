@@ -15,11 +15,11 @@ class string{
     size_t length() const;
     size_t capacity() const;
     size_t max_size() const;
-    bool empty() const;
-    //Setters
+    //Member functions
     void clear();
     void resize (size_t n, char c);
     void reserve (size_t n = 0);
+    bool empty() const;
     //Constructors
     string();
     string(const char* s);
@@ -29,12 +29,12 @@ class string{
     //Operators
     string &operator=(char);
     string &operator=(const string);
-    string &operator= (const char* s);
+    string &operator=(const char* s);
 };
 
 /*char* operator+(string str, char* c);*/
 
-
+//Non member functions
 static string operator+ (const string& lhs, const string& rhs){
   char* temp;
   temp = new char[lhs.size()+rhs.size()];
