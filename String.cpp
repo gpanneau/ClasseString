@@ -42,7 +42,6 @@ string::string(const char* s){
     data_[i]=s[i];
   }
   data_[size_]='\0';
-
 }
 
 
@@ -96,7 +95,6 @@ void string::resize (size_t n, char c){
     }
   }
   data_[size_]='\0';
- 
 }
 
 bool string::empty() const{
@@ -105,33 +103,6 @@ bool string::empty() const{
   }
   return false;
 }
-
-string &string::operator=(char c){
-  data_=new char[MAX_SIZE+1];
-  data_[0]=c;
-  data_[1]='\0';
-  size_=1;
-  capacity_=1;
-  return *this;
-}
-
-
-
-
-string &string::operator=(const string str){
-  data_=new char[MAX_SIZE+1];
-  int i=0;
-  while (str.c_str()[i]!='\0'){
-    data_[i]=str.c_str()[i];
-    ++i;
-  }
-  data_[i+1]='\0';
-  size_=str.size();
-  capacity_=str.capacity();
-  return *this;
-}
-
-
 
 void string::reserve (size_t n){
   if (n>MAX_SIZE){
@@ -153,6 +124,28 @@ void string::reserve (size_t n){
   }
 }
 
+string &string::operator=(char c){
+  data_=new char[MAX_SIZE+1];
+  data_[0]=c;
+  data_[1]='\0';
+  size_=1;
+  capacity_=1;
+  return *this;
+}
+
+string &string::operator=(const string str){
+  data_=new char[MAX_SIZE+1];
+  int i=0;
+  while (str.c_str()[i]!='\0'){
+    data_[i]=str.c_str()[i];
+    ++i;
+  }
+  data_[i+1]='\0';
+  size_=str.size();
+  capacity_=str.capacity();
+  return *this;
+}
+
 string& string::operator= (const char* s){
   size_=0;
   while (s[size_]!='\0' and size_<MAX_SIZE){
@@ -168,32 +161,7 @@ string& string::operator= (const char* s){
 }
 
 
-/*
-string string::operator+(char* c){
-  int i=0;
-  while (c[i]!='\0'){
-    data_[size_+i]=*c;
-    ++i;
-  }
-  data_[size_+i+1]='\0';
-  size_+=i;
-  capacity_+=i;
-  return *this;
 
-string operator+(string str, char* c){
-  string new_str;
-  new_str=str;
-  size=str.size();
-  char* data=new_str.c_str()[0];
-  int i=0;
-  while (c[i]!='\0'){
-    data_[size+i]=*c;
-    ++i;
-  }
-  data[size_+i+1]='\0';
-  size_+=i;
-  capacity_+=i;
-  return new_str.c_str();
-*/
+
 
 
