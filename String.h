@@ -3,7 +3,7 @@
 
 class string{
   protected:
-    char* data_ /*Store the character table address of the string*/
+    char* data_;/*Store the character table address of the string*/
     size_t size_;/*Store the string size*/
     size_t capacity_;/*Store the string capacity,
     i.e. the number of compartments allowed to the different characters inside the table of the string*/
@@ -116,9 +116,10 @@ localized at the address given.*/
   return str;
 }
 
-static string& operator+(const string& lhs, char rhs){/*Concatenation of a string and a single character*/
+static string operator+(const string& lhs, char rhs){/*Concatenation of a string and a single character*/
   char *temp;
-  temp = new char[lhs.size()+2]
+  temp = new char[lhs.size()+2];
+  int i=0;
   while (lhs.c_str()[i]!='\0') {
     temp[i]=lhs.c_str()[i];
     ++i;
