@@ -73,9 +73,10 @@ static string operator+(const string lhs, const char* rhs){
   return str;
 }
 
-static string& operator+(const string& lhs, char rhs){
+static string operator+(const string& lhs, char rhs){
   char *temp;
-  temp = new char[lhs.size()+2]
+  temp = new char[lhs.size()+2];
+  int i=0;
   while (lhs.c_str()[i]!='\0') {
     temp[i]=lhs.c_str()[i];
     ++i;
