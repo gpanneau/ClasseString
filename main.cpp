@@ -83,20 +83,36 @@ int main(int argc, char* argv[]){
   <<"capacity test : "<<std::boolalpha<<(str8.capacity()==12) << std::endl 
   <<"MAX_SIZE test : "<<std::boolalpha<< (str8.max_size()==100) << std::endl;
   
-  
-
-  std::cout << str3.c_str() << std::endl << str3.size() << std::endl <<str3.capacity() << std::endl << str3.max_size() << std::endl;
+  std::cout<<std::endl;
   //reserve
-  std::cout << std::endl << std::endl;
-  std::cout << str1.c_str() << std::endl << str1.size() << std::endl <<str1.capacity() << std::endl << str1.max_size() << std::endl;
-  str1.reserve(25);
-  std::cout << str1.c_str() << std::endl << str1.size() << std::endl <<str1.capacity() << std::endl << str1.max_size() << std::endl;
+  string s_res;
+  s_res=str1;
+  s_res.reserve(25);
+  std::cout<<"reserve :"<<std::endl;
+  std::cout << "c_str reading test : " << s_res.c_str() << std::endl
+  <<"size test : "<<std::boolalpha<< (s_res.size()==5) << std::endl
+  <<"capacity test : "<<std::boolalpha<<(s_res.capacity()==25) << std::endl
+  <<"MAX_SIZE test : "<<std::boolalpha<< (s_res.max_size()==100) << std::endl;
+  
+  std::cout<<std::endl;
   //operator=(char*)
-  std::cout << std::endl << std::endl;
-  str2 = str1.c_str();
-  std::cout << str2.c_str() << std::endl << str2.size() << std::endl <<str2.capacity() << std::endl << str2.max_size() << std::endl;
+  string s_egal;
+  s_egal = str1.c_str();
+  std::cout<<"operator=(char*) :"<<std::endl;
+  std::cout << "c_str reading test : " << s_egal.c_str() << std::endl
+  <<"size test : "<<std::boolalpha<< (s_egal.size()==5) << std::endl
+  <<"capacity test : "<<std::boolalpha<<(s_egal.capacity()==5) << std::endl
+  <<"MAX_SIZE test : "<<std::boolalpha<< (s_egal.max_size()==100) << std::endl;
+
+  std::cout<<std::endl;
   //operator+(string)
-  std::cout << std::endl << (str1+str1).c_str() << std::endl;
+  string s_plus;
+  s_plus = str1+str1;
+  std::cout<<"operator=(char*) :"<<std::endl;
+  std::cout << "c_str reading test : " << s_plus.c_str() << std::endl
+  <<"size test : "<<std::boolalpha<< (s_plus.size()==10) << std::endl
+  <<"capacity test : "<<std::boolalpha<<(s_plus.capacity()==10) << std::endl
+  <<"MAX_SIZE test : "<<std::boolalpha<< (s_plus.max_size()==100) << std::endl;
 
   string nullstr;
   nullstr=string(table2);

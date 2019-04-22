@@ -116,6 +116,7 @@ localized at the address given.*/
   return str;
 }
 
+
 static string operator+(const string& lhs, char rhs){/*Concatenation of a string and a single character*/
   char *temp;
   temp = new char[lhs.size()+2];

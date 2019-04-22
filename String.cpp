@@ -125,6 +125,7 @@ void string::reserve (size_t n){
 }
 
 string &string::operator=(char c){
+  delete [] data_;
   data_=new char[MAX_SIZE+1];
   data_[0]=c;
   data_[1]='\0';
@@ -134,6 +135,7 @@ string &string::operator=(char c){
 }
 
 string &string::operator=(const string str){
+  delete [] data_;
   data_=new char[MAX_SIZE+1];
   int i=0;
   while (str.c_str()[i]!='\0'){
@@ -146,12 +148,14 @@ string &string::operator=(const string str){
   return *this;
 }
 
+
 string& string::operator= (const char* s){
   size_=0;
   while (s[size_]!='\0' and size_<MAX_SIZE){
     ++size_;
   }
   capacity_=size_;
+  delete [] data_;
   data_=new char[size_+1];
   for (int i=0; i<size_;++i){
     data_[i]=s[i];
