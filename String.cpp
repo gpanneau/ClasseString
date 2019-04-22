@@ -105,6 +105,7 @@ string &string::operator=(char c){
   data_[1]='\0';
   size_=1;
   capacity_=1;
+  return *this;
 }
 
 
@@ -120,6 +121,7 @@ string &string::operator=(const string str){
   data_[i+1]='\0';
   size_=str.size();
   capacity_=str.capacity();
+  return *this;
 }
 
 
