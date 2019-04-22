@@ -98,6 +98,16 @@ int main(int argc, char* argv[]){
   //operator+(string)
   std::cout << std::endl << (str1+str1).c_str() << std::endl;
 
+  string nullstr;
+  nullstr=string(table2);
+  string str10;
+  str10=str1+'c';
+  string str9;
+  str9=nullstr+'c';
+
+  //operator+(char)
+  std::cout << str10.c_str() << std::endl << str10.size() << std::endl <<str10.capacity() << std::endl << str10.max_size() << std::endl;
+  std::cout << str9.c_str() << std::endl << str9.size() << std::endl <<str9.capacity() << std::endl << str9.max_size() << std::endl;
 
 
   return 0;
