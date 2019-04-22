@@ -24,12 +24,12 @@ class string{
     string();
     string(const char* s);
     string(const string& str);
-    string& operator= (const char* s);
     //Destructor
     ~string();
     //Operators
     string &operator=(char);
     string &operator=(const string);
+    string &operator= (const char* s);
 };
 
 /*char* operator+(string str, char* c);*/
@@ -71,6 +71,18 @@ static string operator+(const string lhs, const char* rhs){
   temp[i+1]='\0';
   string str(temp);
   return str;
+}
+
+static string& operator+(const string& lhs, char rhs){
+  char *temp;
+  temp = new char[lhs.size()+2]
+  while (lhs.c_str()[i]!='\0') {
+    temp[i]=lhs.c_str()[i];
+    ++i;
+  }
+  temp[i]=rhs;
+  temp[i+1]='\0';
+  return string(temp);
 }
 
 #endif //STRING_
